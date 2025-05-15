@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>攝氏→華氏</title>
+  <style>
+    body { 
+        background:#0881dd; color:#f30101; font-family:sans-serif; text-align:center; padding-top:60px; 
+    }
+  </style>
+</head>
+<body>
+    <h1>攝氏轉華氏</h1>
+  <input id="celsius" type="number" placeholder="攝氏 °C">
+  <button onclick="convert()">轉換</button>
+  <p id="result"></p>
+
+  <script>
+    function convert () {
+      let c = parseFloat(document.getElementById('celsius').value);
+      if (isNaN(c)) {
+        document.getElementById('result').textContent = '請輸入有效數字';
+        return;
+      }
+      let f = (c * 9 / 5 + 32).toFixed(2);
+      document.getElementById('result').textContent = `${c}°C = ${f}°F`;
+    }
+  </script>
+</body>
+</html>

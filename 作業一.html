@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>成績換算</title>
+  <style>
+    body { 
+        background:#0881dd; color:#f30101; text-align:center; padding-top:60px; font-family:sans-serif; 
+    }
+  </style>
+</head>
+<body>
+    <h1>成績換算</h1>
+  <input id="score" type="number" placeholder="分數 (0–100)">
+  <button onclick="grade()">送出</button>
+  <p id="result"></p>
+
+  <script>
+    function grade() {
+      const x = Number(document.getElementById('score').value);
+      let g = '錯誤';
+      if (x >= 0 && x <= 100) {
+        if (x >= 80) g = 'A';
+        else if (x >= 70) g = 'B';
+        else if (x >= 60) g = 'C';
+        else g = 'D';
+      }
+      document.getElementById('result').textContent = g;
+    }
+  </script>
+</body>
+</html>
